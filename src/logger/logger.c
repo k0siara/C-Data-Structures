@@ -1,10 +1,3 @@
-/*
- * logger.c
- *
- *  Created on: Apr 12, 2018
- *      Author: Patryk Marciszek-Kosieradzki
- */
-
 #include <time.h>
 #include "logger.h"
 

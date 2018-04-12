@@ -1,10 +1,3 @@
-/*
- * stack.h
- *
- *  Created on: Apr 12, 2018
- *      Author: Patryk Marciszek-Kosieradzki
- */
-
 #ifndef _STACK_H_
 #define _STACK_H_
 

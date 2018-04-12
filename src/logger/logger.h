@@ -1,10 +1,3 @@
-/*
- * logger.h
- *
- *  Created on: Apr 12, 2018
- *      Author: Patryk Marciszek-Kosieradzki
- */
-
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
