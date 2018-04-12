@@ -9,8 +9,8 @@
 #define _STACK_H_
 
 typedef int bool;
-#define true 1
 #define false 0
+#define true 1
 
 typedef struct StackNode StackNode;
 typedef struct Stack Stack;

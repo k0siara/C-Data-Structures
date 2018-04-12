@@ -35,38 +35,31 @@ Stack *newStack() {
 }
 
 bool push(Stack *stack, int data) {
-	if (stack == NULL) {
-		printf("Stack is NULL");
+	if (!stack) {
+		printf("Stack is NULL \n");
 		return false;
 	}
 
-    if (stack->head == NULL) {
-        stack->head = newStackNode();
-        stack->head->data = data;
-    } else {
-        StackNode *tmp = newStackNode();
-        tmp->data = data;
-        tmp->next = stack->head;
-        stack->head = tmp;
-    }
+	StackNode *tmp = newStackNode();
+	tmp->data = data;
+	tmp->next = stack->head;
+	stack->head = tmp;
 
     stack->count++;
     return true;
 }
 
 bool pop(Stack *stack) {
-    if (stack->head == NULL) {
-        printf("Empty Stack");
+    if (!stack->head) {
+        printf("Empty Stack \n");
         return false;
     }
 
-    if (stack->head->next == NULL) {
-        stack->head == NULL;
-    } else {
-        StackNode *tmp = stack->head;
-        stack->head = stack->head->next;
-        free(tmp);
-    }
+    StackNode *tmp = stack->head;
+    stack->head = stack->head->next;
+
+    free(tmp);
+    tmp = NULL;
 
     stack->count--;
     return true;
@@ -78,8 +71,13 @@ int size(Stack *stack) {
 
 void show(Stack *stack) {
     StackNode *current = stack->head;
-    while (current != NULL) {
-        printf("%d ", current->data);
-        current = current->next;
+    if (!current) {
+    	printf("EMPTY \n");
+    	return;
+    }
+
+    while (current) {
+    	printf("%d ", current->data);
+    	current = current->next;
     }
 }
