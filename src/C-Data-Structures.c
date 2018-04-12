@@ -3,8 +3,8 @@
 #include "stack/stack.h"
 #include "logger/logger.h"
 
-void stackExample() {
-	Stack *stack = newStack();
+void stack_example() {
+	Stack *stack = new_stack();
 
 	push(stack, 10);
 	push(stack, 15);
@@ -16,7 +16,7 @@ void stackExample() {
 }
 
 int main(void) {
-	stackExample();
+	stack_example();
 
 	return EXIT_SUCCESS;
 }

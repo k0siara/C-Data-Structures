@@ -8,10 +8,10 @@ typedef int bool;
 typedef struct StackNode StackNode;
 typedef struct Stack Stack;
 
-StackNode *newStackNode();
-Stack *newStack();
+StackNode *new_stack_node();
+Stack *new_stack();
 
-bool push(Stack *stack, int data);
+bool push(Stack *stack, const int data);
 bool pop(Stack *stack);
 int size(Stack *stack);
 

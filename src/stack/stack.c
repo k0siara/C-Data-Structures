@@ -13,27 +13,27 @@ struct Stack {
 
 };
 
-StackNode *newStackNode() {
+StackNode *new_stack_node() {
     StackNode *node =  malloc(sizeof(StackNode));
     node->next = NULL;
     node->data = NULL;
     return node;
 }
 
-Stack *newStack() {
+Stack *new_stack() {
     Stack *stack =  malloc(sizeof(Stack));
     stack->head = NULL;
     stack->count = 0;
     return stack;
 }
 
-bool push(Stack *stack, int data) {
+bool push(Stack *stack, const int data) {
 	if (!stack) {
 		printf("Stack is NULL \n");
 		return false;
 	}
 
-	StackNode *tmp = newStackNode();
+	StackNode *tmp = new_stack_node();
 	tmp->data = data;
 	tmp->next = stack->head;
 	stack->head = tmp;
