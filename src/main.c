@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack/stack.h"
+#include "queue/queue.h"
 #include "logger/logger.h"
 
 void stack_example() {
@@ -9,14 +10,21 @@ void stack_example() {
 	push(stack, 10);
 	push(stack, 15);
 
-    show(stack);
-    printf("\n");
+    show_stack(stack);
+}
 
-    debug("oh fock %d", 20);
+void queue_example() {
+	Queue *queue = new_queue();
+
+	enqueue(queue, 10);
+	enqueue(queue, 15);
+
+    show_queue(queue);
 }
 
 int main(void) {
 	stack_example();
+	queue_example();
 
 	return EXIT_SUCCESS;
 }

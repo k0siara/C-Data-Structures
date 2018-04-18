@@ -15,7 +15,7 @@ bool push(Stack *stack, const int data);
 bool pop(Stack *stack);
 int size(Stack *stack);
 
-void show(Stack *stack);
+void show_stack(Stack *stack);
 
 
 #endif

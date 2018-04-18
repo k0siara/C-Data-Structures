@@ -1,27 +1,27 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include "../logger/logger.h"
 #include "stack.h"
 
 struct StackNode {
-    struct StackNode *next;
+    StackNode *next;
     int data;
-
 };
 
 struct Stack {
     StackNode *head;
     size_t count;
-
 };
 
 StackNode *new_stack_node() {
-    StackNode *node =  malloc(sizeof(StackNode));
+    StackNode *node = (StackNode*) malloc(sizeof(StackNode));
     node->next = NULL;
     node->data = NULL;
     return node;
 }
 
 Stack *new_stack() {
-    Stack *stack =  malloc(sizeof(Stack));
+    Stack *stack = (Stack*) malloc(sizeof(Stack));
     stack->head = NULL;
     stack->count = 0;
     return stack;
@@ -29,7 +29,7 @@ Stack *new_stack() {
 
 bool push(Stack *stack, const int data) {
 	if (!stack) {
-		printf("Stack is NULL \n");
+		error("Stack is NULL");
 		return false;
 	}
 
@@ -44,7 +44,7 @@ bool push(Stack *stack, const int data) {
 
 bool pop(Stack *stack) {
     if (!stack->head) {
-        printf("Empty Stack \n");
+        error("Empty Stack");
         return false;
     }
 
@@ -62,10 +62,10 @@ int size(Stack *stack) {
 	return stack->count;
 }
 
-void show(Stack *stack) {
+void show_stack(Stack *stack) {
     StackNode *current = stack->head;
     if (!current) {
-    	printf("EMPTY \n");
+    	debug("EMPTY");
     	return;
     }
 
