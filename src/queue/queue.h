@@ -16,6 +16,6 @@ bool dequeue(Queue *queue);
 
 int peek(Queue *queue);
 
-void show_queue(Queue *queue);
+void queue_show(Queue *queue);
 
 #endif

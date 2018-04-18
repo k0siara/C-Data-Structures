@@ -66,7 +66,7 @@ int peek(Queue *queue) {
     return queue->front->data;
 }
 
-void show_queue(Queue *queue) {
+void queue_show(Queue *queue) {
     QueueNode *current = queue->front;
     while (current) {
     	printf("%d ", current->data);

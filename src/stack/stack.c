@@ -27,7 +27,7 @@ Stack *new_stack() {
     return stack;
 }
 
-bool push(Stack *stack, const int data) {
+bool stack_push(Stack *stack, const int data) {
 	if (!stack) {
 		error("Stack is NULL");
 		return false;
@@ -42,7 +42,7 @@ bool push(Stack *stack, const int data) {
     return true;
 }
 
-bool pop(Stack *stack) {
+bool stack_pop(Stack *stack) {
     if (!stack->head) {
         error("Empty Stack");
         return false;
@@ -58,11 +58,11 @@ bool pop(Stack *stack) {
     return true;
 }
 
-int size(Stack *stack) {
+int stack_size(Stack *stack) {
 	return stack->count;
 }
 
-void show_stack(Stack *stack) {
+void stack_show(Stack *stack) {
     StackNode *current = stack->head;
     if (!current) {
     	debug("EMPTY");

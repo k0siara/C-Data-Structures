@@ -11,11 +11,12 @@ typedef struct Stack Stack;
 StackNode *new_stack_node();
 Stack *new_stack();
 
-bool push(Stack *stack, const int data);
-bool pop(Stack *stack);
-int size(Stack *stack);
+bool stack_push(Stack *stack, const int data);
+bool stack_pop(Stack *stack);
 
-void show_stack(Stack *stack);
+int stack_size(Stack *stack);
+
+void stack_show(Stack *stack);
 
 
 #endif
